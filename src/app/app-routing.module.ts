@@ -7,7 +7,15 @@ import { ContentLayoutComponent } from './layout/content-layout/content-layout.c
 const routes: Routes = [
   {
     path: '',
-    component: ContentLayoutComponent
+    redirectTo: '/catalogue',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
+    component: ContentLayoutComponent,
+    children: [
+      { path: 'catalogue', loadChildren: () => import('@modules/catalogue/catalogue.module').then(m => m.CatalogueModule) }
+    ]
   }
 ];
 
