@@ -29,35 +29,26 @@
             ],
             "styles": [
               "src/styles/themes/canvas/css/bootstrap.css",
-              "src/styles/themes/canvas/style.scss",
+              "src/styles/themes/canvas/style.css",
               "src/styles/themes/canvas/css/dark.css",
-              "src/styles/themes/canvas/css/swiper.css",
+              "src/styles/themes/canvas/demos/app-landing/app-landing.css",
               "src/styles/themes/canvas/css/font-icons.css",
               "src/styles/themes/canvas/one-page/css/et-line.css",
               "src/styles/themes/canvas/css/animate.css",
               "src/styles/themes/canvas/css/magnific-popup.css",
+              "src/styles/themes/canvas/demos/app-landing/css/fonts.css",
               "src/styles/themes/canvas/css/components/bs-switches.css",
               "src/styles/themes/canvas/css/responsive.css",
-              "src/styles.scss",
-              {
-                "input": "src/styles/themes/canvas/demos/app-landing/app-landing.css",
-                "lazy": true,
-                "bundleName": "app-landing"
-              },
-              {
-                "input": "src/styles/themes/canvas/demos/app-landing/css/fonts.css",
-                "lazy": true,
-                "bundleName": "fonts"
-              },
-              {
-                "input": "src/styles/themes/canvas/demos/app-landing/css/colors.css",
-                "lazy": true,
-                "bundleName": "colors"
-              }
+              "src/styles/themes/canvas/demos/app-landing/css/colors.css",
+              "src/styles.scss"
             ],
             "scripts": [
               "src/styles/themes/canvas/js/jquery.js",
-              "src/styles/themes/canvas/js/plugins.js",
+              {
+                "input": "src/styles/themes/canvas/js/plugins.js",
+                "lazy": true,
+                "bundleName": "plugins"
+              },
               {
                 "input": "src/styles/themes/canvas/js/functions.js",
                 "lazy": true,
@@ -66,7 +57,7 @@
               {
                 "input": "src/styles/themes/canvas/custom/app-landing.js",
                 "lazy": true,
-                "bundleName": "app-landing-custom"
+                "bundleName": "app-landing"
               }
             ]
           },
