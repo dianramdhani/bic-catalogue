@@ -44,11 +44,7 @@
             ],
             "scripts": [
               "src/styles/themes/canvas/js/jquery.js",
-              {
-                "input": "src/styles/themes/canvas/js/plugins.js",
-                "lazy": true,
-                "bundleName": "plugins"
-              },
+              "src/styles/themes/canvas/js/plugins.js",
               {
                 "input": "src/styles/themes/canvas/js/functions.js",
                 "lazy": true,

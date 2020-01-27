@@ -1,33 +1,18 @@
-import { Component, OnDestroy, AfterViewInit } from '@angular/core';
-import { environment } from '@env';
+import { Component, AfterViewInit } from '@angular/core';
+
+import { LibraryLoaderService } from '@shared/service/library-loader.service';
 
 @Component({
   selector: 'app-catalogue',
   templateUrl: './catalogue.component.html',
   styleUrls: ['./catalogue.component.scss']
 })
-export class CatalogueComponent implements AfterViewInit, OnDestroy {
+export class CatalogueComponent implements AfterViewInit {
   scriptElements: HTMLScriptElement[] = [];
 
-  constructor() { }
+  constructor(private libLoader: LibraryLoaderService) { }
 
   ngAfterViewInit() {
-    const pluginsElement = document.createElement('script');
-    pluginsElement.src = 'plugins.js';
-    this.scriptElements.push(pluginsElement);
-
-    const functionsElement = document.createElement('script');
-    functionsElement.src = 'functions.js';
-    this.scriptElements.push(functionsElement);
-
-    const appLandingCustomElement = document.createElement('script');
-    appLandingCustomElement.src = 'app-landing.js';
-    this.scriptElements.push(appLandingCustomElement);
-
-    this.scriptElements.forEach(el => document.body.appendChild(el));
-  }
-
-  ngOnDestroy() {
-    this.scriptElements.forEach(el => el.parentElement.removeChild(el));
+    this.libLoader.loadScript('app-landing.js');
   }
 }
